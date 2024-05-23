@@ -142,7 +142,7 @@
 
 						<div class="col-lg-6">
                             <div class="form-group">
-                                <input class="form-control" id="brandText" type="brand" name="Brand"  value size="2" placeholder="評價(1~5)" required>
+                                <input class="form-control" id="evaluateText" type="evaluate" name="Evaluate"  value size="2" placeholder="評價(1~5)" required>
                             </div>
                         </div>
 
@@ -150,7 +150,13 @@
                             <div class="form-group">
                                 <input class="form-control" id="emailText" type="email" name="Email"  value size="60" placeholder="Email" required>
                             </div>
-                        </div>                        					
+                        </div>  
+						
+						<div class="col-lg-6">
+                            <div class="form-group">
+                                <input class="form-control" id="brandText" type="brand" name="Brand"  value size="60" placeholder="廠牌" required>
+                            </div>
+                        </div>
 
 						<div class="col-lg-6">
                             <div class="form-group">
@@ -311,14 +317,16 @@
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "評論回饋";
+			var evaluate = evaluateText.value;
 			var email = emailText.value;
 			var brand = brandText.value;
 			var car = carText.value;
 			var subject = subText.value;
 			var know = knowText.value;
 	//把user填的資料都塞到 mail body 中
-			var body = "車型："+carText.value+'%0A%0A';
-				body += "姓名："+subText.value+'%0A%0A';
+			var body = "評分："+evaluateText.value+'%0A%0A';			
+			    body += "姓名："+subText.value+'%0A%0A';
+				body += "車型："+carText.value+'%0A%0A';				
 				body += "廠牌："+brandText.value+'%0A%0A';
 				body += "Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
