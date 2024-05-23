@@ -310,6 +310,7 @@
 		function submitHandler(){
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+			var title = "評論回饋";
 			var email = emailText.value;
 			var brand = brandText.value;
 			var car = carText.value;
@@ -317,13 +318,13 @@
 			var know = knowText.value;
 	//把user填的資料都塞到 mail body 中
 			var body = "車型："+carText.value+'%0A%0A';
-				// body += "姓名："+nameText.value+'%0A';
+				body += "姓名："+subText.value+'%0A%0A';
 				body += "廠牌："+brandText.value+'%0A%0A';
 				body += "Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
 				body += "我想對幽靈重機說: "+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
 	//傳送的主要程式碼
-			mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+			mailTo.href="mailto:"+to+"?subject="+title+"&body="+body;
 			mailTo.click();
 		}
 	//在body onload
