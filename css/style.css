@@ -94,7 +94,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 .btn {
   display: inline-block;
   font-size: 14px;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: .5px;
   padding: .75rem 2rem;
