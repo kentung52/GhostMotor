@@ -124,7 +124,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   transition: all .35s ease;
 }
 
-.btn2 {
+.btn-service {
   display: inline-block;
   font-size: 14px;
   font-size: 1.5rem;
