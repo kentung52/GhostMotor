@@ -511,8 +511,14 @@ a:focus {
   color: #222;
   font-family: "Exo", sans-serif;
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 16px;
   transition: all .25s ease;
+}
+
+@media (min-width: 448px) {
+  #navbarmain .nav-link {
+    font-size: 25px;
+  }
 }
 
 .dropdown-toggle::after {
@@ -552,6 +558,7 @@ a:focus {
   background: transparent;
   font-weight: 400;
   color: #555;
+  font-size: 20px;
 }
 
 .dropdown .dropdown-item:hover {
