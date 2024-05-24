@@ -511,15 +511,11 @@ a:focus {
   color: #222;
   font-family: "Exo", sans-serif;
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 25px;
   transition: all .25s ease;
 }
 
-@media (min-width: 448px) {
-  #navbarmain .nav-link {
-    font-size: 25px;
-  }
-}
+
 
 .dropdown-toggle::after {
   display: none;
