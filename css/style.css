@@ -777,8 +777,8 @@ a:focus {
   font-size: 20px;
 }
 
-.feature-item span {
-  font-size: 15px;  
+.feature-item b {
+  font-size: 20px;  
 }
 
 .feature-section.border-top {
