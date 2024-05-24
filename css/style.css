@@ -863,6 +863,10 @@ a:focus {
   box-shadow: 0 0 38px rgba(21, 40, 82, 0.07);
 }
 
+.service-block h4{
+  font-size: 30px;  
+}
+
 .service-block img {  
   width: 100%;    
   margin-top: -60px;
