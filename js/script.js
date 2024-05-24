@@ -111,7 +111,7 @@
 	});
 
 	$('.testimonial-wrap-2').slick({
-		slidesToShow: 2,
+		slidesToShow: 2,  //顯示數量
 		slidesToScroll: 2,
 		infinite: true,
 		dots: true,
@@ -153,8 +153,8 @@
 	});
 
 	$('.testimonial-wrap-3').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
+		slidesToShow: 1,    //顯示數量
+		slidesToScroll: 1,  //滑動數量
 		infinite: true,
 		dots: true,
 		arrows:false,
