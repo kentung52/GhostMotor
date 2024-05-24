@@ -99,6 +99,20 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 .btn {
   display: inline-block;
   font-size: 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  padding: .75rem 2rem;
+  font-family: "Exo", sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: all .35s ease;
+}
+
+.btn-index {
+  display: inline-block;
+  font-size: 14px;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: .5px;
