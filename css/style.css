@@ -736,6 +736,14 @@ a:focus {
   font-size: 20px;
 }
 
+.feature-item li {
+  font-size: 20px;
+}
+
+.feature-item span {
+  font-size: 20px;
+}
+
 .feature-section.border-top {
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
