@@ -1055,9 +1055,17 @@ a:focus {
   margin-bottom: 20px;
 }
 
+.testimonial-block h4 {  
+  font-size: 25px;
+}
+
+.testimonial-block span {  
+  font-size: 15px;
+}
+
 .testimonial-block p {
   background: #fff;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .testimonial-block .client-info {
