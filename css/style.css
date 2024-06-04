@@ -1560,6 +1560,8 @@ a:focus {
 .sidebar-widget.category ul li a {
   color: #222;
   transition: all 0.3s ease;
+  
+  
 }
 
 .sidebar-widget.category ul li a:hover {
@@ -1569,6 +1571,10 @@ a:focus {
 
 .sidebar-widget.category ul li span {
   margin-left: 10px;
+}
+
+.table-size {
+  font-size: 30px;
 }
 
 .sidebar-widget.tags a {
@@ -1600,6 +1606,7 @@ a:focus {
 .sidebar-widget.schedule-widget ul li {
   padding: 10px 0px;
   border-bottom: 1px solid #eee;
+  font-size: 20px;
 }
 
 .search-form {
