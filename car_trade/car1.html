@@ -297,7 +297,7 @@
 
 						<div class="col-lg-6">
                             <div class="form-group">
-                                <input class="form-control" id="subText" type="image" name="Subject"  value size="60" aria-invalid="false" placeholder="姓名" required>
+                                <input class="form-control" id="subText" type="text" name="Subject"  value size="60" aria-invalid="false" placeholder="姓名" required>
                             </div>
                         </div>						
 
@@ -305,17 +305,12 @@
                             <div class="form-group">
                                 <input class="form-control" id="emailText" type="email" name="Email"  value size="10" placeholder="LineID or Email" required>
                             </div>
-                        </div>  
-
-						<div class="col-lg-6">
-                            <div class="form-group">
-                                <input class="form-control" id="dateText" type="datetime" name="Date"  value size="10" placeholder="XXXX/XX/XX" required>
-                            </div>
-                        </div>
+                        </div>  						
 						
 						<div class="col-lg-6">
                             <div class="form-group">
-                                <input class="form-control" id="timeText" type="datetime-local" name="Time"  placeholder="XX:XX" required>
+								點此填寫日期時間
+                                <input class="form-control" id="timeText" type="datetime-local" name="Date-and-Time"  placeholder="XX:XX" required>
                             </div>
                         </div>						                         
 
@@ -465,15 +460,13 @@
 			var title = "寄賣看車";
 			var type = "R15V4"	
 			var subject = subText.value;		
-			var email = emailText.value;
-			var date = dateText.value;
+			var email = emailText.value;			
 			var time = timeText.value;			
 			var know = knowText.value;
 	//把user填的資料都塞到 mail body 中
 			var body = "車型："+type+'%0A%0A';			
-			    body += "姓名："+subText.value+'%0A%0A';
-				body += "預約日期："+dateText.value+'%0A%0A';				
-				body += "時間："+timeText.value+'%0A%0A';
+			    body += "姓名："+subText.value+'%0A%0A';							
+				body += "預約日期時間："+timeText.value+'%0A%0A';
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
 				body += "我想對幽靈重機說: "+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
