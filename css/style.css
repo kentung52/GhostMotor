@@ -364,6 +364,12 @@ a:focus {
 /* 標題文字 */
 .page-title .block h1 {    
   color: #fff;
+  font-size: 60px;
+}
+
+.page-title .block span {    
+  color: #fff;
+  font-size: 30px;
 }
 
 .page-title .block p {
@@ -769,7 +775,7 @@ a:focus {
 
 .feature-item h4 {
   color: #223a66; 
-  font-size: 35px; 
+  font-size: 30px; 
 }
 
 .feature-item p {
