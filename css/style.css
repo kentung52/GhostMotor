@@ -443,7 +443,7 @@ a:focus {
   color: #223a66;
 }
 
-.section-title p {
+.section-title b {
   font-size: 20px;
 }
 
@@ -1650,10 +1650,12 @@ a:focus {
 
 .widget h4 {
   color: #223a66;
+  font-size: 30px;
 }
 
 .widget .footer-menu a {
   color: #6F8BA4;
+  font-size: 25px;
 }
 
 .widget .footer-menu a:hover {
