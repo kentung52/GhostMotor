@@ -365,7 +365,7 @@
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
 				body += "改裝品清單與車況概述: "+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
 	//傳送的主要程式碼
-			mailTo.href="gmailto:"+to+"?subject="+title+"&body="+body;
+			mailTo.href="mailto:"+to+"?subject="+title+"&body="+body;
 			mailTo.click();
 		}
 	//在body onload
