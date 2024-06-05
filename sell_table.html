@@ -352,14 +352,14 @@
 			var subject = subText.value;		
 			var email = emailText.value;							
 			var know = knowText.value;
-			var img = carimage.image;
+			var img = carimage.file;
 			var year = yearText.value;
 			var milage = milageText.value;
 	//把user填的資料都塞到 mail body 中
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+carimage.image+'%0A%0A';	
+				body += "車輛照片:"+img+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
