@@ -171,6 +171,20 @@
                         </div>
                     </div>
 
+					<div class="col-lg-6">
+						<div class="form-group">
+							您如何得知我們
+							<select class="form-control" id="knowText" type="text" name="Know"  value="1" aria-invalid="false" placeholder="您如何得知我們" required>
+								<option value="官方網站">官方網站</option>
+								<option value="社交軟體">社交軟體</option>
+								<option value="親友介紹">親友介紹</option>
+								<option value="廣告">廣告</option>
+								<option value="剛好路過到">剛好路過到</option>								
+							</select>
+						</div>
+					</div>
+				</div>
+
                     <div class="form-group-2 mb-4">
                         <textarea id="bodyText" name="your-message" cols="40" rows="10"  aria-required="true" aria-invalid="false" placeholder="想對我們說的話" required></textarea>
                     </div>
@@ -311,18 +325,22 @@
 		function submitHandler(){
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+			var title = "新車許願池"
 			var email = emailText.value;
 			var brand = brandText.value;
 			var car = carText.value;
 			var subject = subText.value;
+			var know = knowText.value;
 	//把user填的資料都塞到 mail body 中
 			var body = "車型："+carText.value+'%0A';
 				// body += "姓名："+nameText.value+'%0A';
 				body += "廠牌："+brandText.value+'%0A';
-				body += "Email："+emailText.value+'%0A';				
+				body += "姓名："+subText.value+'%0A';
+				body += "Email："+emailText.value+'%0A';
+				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
 				body += "我想對幽靈重機說"+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
 	//傳送的主要程式碼
-			mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+			mailTo.href="mailto:"+to+"?subject="+title+"&body="+body;
 			mailTo.click();
 		}
 	//在body onload
