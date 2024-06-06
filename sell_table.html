@@ -201,6 +201,7 @@
                             <div class="form-group">
 								點此上傳照片
                                 <input class="form-control" id="carimage" type="file"  name="Carimage" multiple accept=".jpg, jpeg, .png"   required>
+								<img src="" alt="">
                             </div>
                         </div>		
 
@@ -349,6 +350,20 @@
 <script>
 	//宣告預設表單內容為空 （你想要的話也可以加東西）
 		var initSubject='',initBody='';
+
+		var input = document.getElementById("carimage")
+		var demo = document.getElementsByTagName('img')[0]
+		var reader = new FileReader();
+		input.addEventListener('change',upload)
+
+		function upload(e){
+			let carimage = e.target.files || e.dataTransfer.files;
+			demo.src=window.URL.createObjectURL(carimage[0]);
+		}
+
+		reader.onload=function(e){
+			demo.src=e.target.result
+		}
 			 
 		//按下傳送按鈕後執行
 		function submitHandler(){
@@ -367,7 +382,7 @@
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+img+'%0A%0A';	
+				body += "車輛照片:"+demo+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
