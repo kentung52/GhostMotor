@@ -201,7 +201,7 @@
                             <label class="form-group">
 								點此上傳照片
                                 <input class="form-control" id="carimage" type="file"  name="Carimage" multiple accept=".jpg, jpeg, .png"   required>
-								<!-- <img src="" alt=""> -->
+								
                             </label>
                         </div>		
 
@@ -370,7 +370,7 @@
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var img = carimage.files;				
+			var img = carimage.value;				
 			var type = carText.value;	
 			var subject = subText.value;		
 			var email = emailText.value;							
@@ -381,7 +381,7 @@
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+upload()+'%0A%0A';	
+				body += "車輛照片:"+carimage.value+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
