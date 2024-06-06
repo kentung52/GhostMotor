@@ -351,7 +351,7 @@
 	//宣告預設表單內容為空 （你想要的話也可以加東西）
 		var initSubject='',initBody='';
 
-		var input = document.getElementById("carimage")
+		// var input = document.getElementById("carimage")
 		var demo = document.getElementsByTagName('img')[0]
 		var reader = new FileReader();
 		input.addEventListener('change',upload)
@@ -370,7 +370,7 @@
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var img = carimage.value;
+			var img = carimage.files;
 			// HTMLImageElement = img;			
 			var type = carText.value;	
 			var subject = subText.value;		
