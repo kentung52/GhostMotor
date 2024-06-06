@@ -349,17 +349,14 @@
 <script>
 	//宣告預設表單內容為空 （你想要的話也可以加東西）
 		var initSubject='',initBody='';
-		const imageArr = [];
-	 
+			 
 		//按下傳送按鈕後執行
 		function submitHandler(){
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var imgvalue = carimage.value;
-			const img = new Image();
-			img.src = `{imgvalue}`
-			imageArr.push(img);
+			var img = carimage.value;
+			HTMLImageElement = img;			
 			var type = carText.value;	
 			var subject = subText.value;		
 			var email = emailText.value;							
@@ -370,7 +367,7 @@
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+imageArr+'%0A%0A';	
+				body += "車輛照片:"+HTMLImageElement+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
