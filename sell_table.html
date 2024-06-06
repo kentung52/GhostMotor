@@ -198,11 +198,11 @@
                         </div>	
 						
 						<div class="col-lg-6">
-                            <div class="form-group">
+                            <label class="form-group">
 								點此上傳照片
                                 <input class="form-control" id="carimage" type="file"  name="Carimage" multiple accept=".jpg, jpeg, .png"   required>
-								<img src="" alt="">
-                            </div>
+								<!-- <img src="" alt=""> -->
+                            </label>
                         </div>		
 
 						<div class="col-lg-6">
@@ -382,7 +382,7 @@
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+demo+'%0A%0A';	
+				body += "車輛照片:"+reader+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
