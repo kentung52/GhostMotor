@@ -352,13 +352,16 @@
 		var initSubject='',initBody='';
 
 		var input = document.getElementById("carimage")
-		var demo = document.getElementsByTagName('img')[0]
+		// var demo = document.getElementsByTagName('img')[0]
+		console.log("Initial img src:", demo);
 		var reader = new FileReader();
-		// input.addEventListener('change',upload)
+		input.addEventListener('change',upload)
 
 		function upload(e){
 			let carimage = e.target.files || e.dataTransfer.files;
 			demo.src=window.URL.createObjectURL(carimage[0]);
+			console.log("Initial img:", carimage);
+			
 		}
 
 		// reader.onload=function(e){
@@ -370,7 +373,8 @@
 			var to = "20104505cody@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var img = demo.value;				
+			var img = carimage.value;	
+			console.log("Initial img src:", img);
 			var type = carText.value;	
 			var subject = subText.value;		
 			var email = emailText.value;							
@@ -381,7 +385,7 @@
 			var body = "車型："+type+'%0A%0A';		
 			    body += "年分:"+yearText.value+'%0A%0A';	
 				body += "里程:"+milageText.value+'%0A%0A';
-				body += "車輛照片:"+demo.value+'%0A%0A';	
+				body += "車輛照片:"+carimage.value+'%0A%0A';	
 			    body += "姓名："+subText.value+'%0A%0A';					
 				body += "LineID or Email："+emailText.value+'%0A%0A';
 				body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
