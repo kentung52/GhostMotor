@@ -224,8 +224,8 @@
                     </div>
 
                     <div class="text-center">
-                       <a href="../completed.html" nodemailer onclick="javascript:window.location.reload()" ><input  onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約"  ></a>
-					   <!-- <a id="mailTo"></a> -->
+                       <a href="../completed.html"  ><input  onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約"  ></a>
+					   <a id="mailTo"></a>
                     </div>
                 </form>
             </div>
@@ -347,9 +347,9 @@
 </footer>
    
 
-<script>
+<!-- <script>
 	// //宣告預設表單內容為空 （你想要的話也可以加東西）
-	// 	var initSubject='',initBody='';
+		var initSubject='',initBody='';
 
 	// 	var input = document.getElementById("carimage")
 	// 	var demo = document.getElementsByTagName('img')[0]
@@ -421,42 +421,85 @@
 			
 		}
 
-
-
-		const nodemailer = require('nodemailer');
-
-// 建立郵件傳輸器
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'ken4506@gmail.com',
-    pass: 'xffy bqmg awdg qxas' // 使用 Google 應用程式密碼
-  }
-});
-
-// 定義郵件內容
-const mailOptions = {
-  from: 'ken4506@gmail.com',
-  to: 'ken4506@gmail.com',
-  subject: '自動發送的郵件',
-  text: '這是一封自動發送的郵件。'
-  
-};
-
-// 發送郵件
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('郵件已成功發送：' + info.response);
-  }
-});
-	</script>
+	</script> -->
 
     <!-- 
     Essential Scripts
     =====================================-->
 
+	<script>
+
+		function handleFileSelect(event) {
+		  var file = event.target.files[0];
+		  var reader = new FileReader();
+		  
+		  reader.onload = function(event) {
+			var imageDataURL = event.target.result;
+			var previewImage = document.getElementById('previewImage');
+	
+			var imageBlob = dataURLtoBlob(imageDataURL);
+			var blobURL = URL.createObjectURL(imageBlob);
+			previewImage.src = blobURL;
+			// console.log("Initial img demo.src:", previewImage.src);
+		  };
+		  
+		  reader.readAsDataURL(file);
+		}
+	
+		function dataURLtoBlob(dataURL) {
+		  var arr = dataURL.split(',');
+		  var mime = arr[0].match(/:(.*?);/)[1];
+		  var bstr = atob(arr[1]);
+		  var n = bstr.length;
+		  var u8arr = new Uint8Array(n);
+		  
+		  while (n--) {
+			u8arr[n] = bstr.charCodeAt(n);
+		  }
+		  
+		  return new Blob([u8arr], { type: mime });
+		}
+	
+			// reader.onload=function(e){
+			// 	var tempUrl=e.target.result
+			// }
+			// reader.readAsDataURL(file);
+				 
+			//按下傳送按鈕後執行
+			function submitHandler(){
+				var to = "ken4506@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+				// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+				var title = "車輛寄賣預約";
+				var img = previewImage.src;	
+				console.log("Initial img demo.src:", previewImage.src);
+				var type = carText.value;	
+				var subject = subText.value;		
+				var email = emailText.value;							
+				var know = knowText.value;			
+				var year = yearText.value;
+				var milage = milageText.value;
+		//把user填的資料都塞到 mail body 中
+				var body = "車型："+type+'%0A%0A';		
+					body += "年分:"+yearText.value+'%0A%0A';	
+					body += "里程:"+milageText.value+'%0A%0A';
+					body += "車輛照片:"+img+'%0A%0A';	
+					body += "姓名："+subText.value+'%0A%0A';					
+					body += "LineID or Email："+emailText.value+'%0A%0A';
+					body += "顧客如何得知我們: "+knowText.value+'%0A%0A';				
+					body += "改裝品清單與車況概述: "+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+		//傳送的主要程式碼
+				mailTo.href="mailto:"+to+"?subject="+title+"&body="+body;
+				mailTo.click();
+			}
+		//在body onload
+			function init(){
+				subText.value=initSubject;
+				toText.value=initTo;
+				bodyText.value=initBody;
+				
+			}
+		</script>
+	
     
     <!-- Main jQuery -->
     <script src="../plugins/jquery/jquery.js"></script>
