@@ -200,9 +200,9 @@
 						<div class="col-lg-6">
                             <label class="form-group">
 								點此上傳照片
-								<input type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)">
+                                <input type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)">
 								<img id="previewImage" style="max-width: 300px;">
-							</label>
+                            </label>
                         </div>		
 
 						<div class="col-lg-6">
@@ -348,10 +348,25 @@
    
 
 <script>
-	//宣告預設表單內容為空 （你想要的話也可以加東西）
-		var initSubject='',initBody='';
+	// //宣告預設表單內容為空 （你想要的話也可以加東西）
+	// 	var initSubject='',initBody='';
 
-		function handleFileSelect(event) {
+	// 	var input = document.getElementById("carimage")
+	// 	var demo = document.getElementsByTagName('img')[0]
+	// 	// var tempUrl = document.getElementsById('img')
+	// 	// images.src = tempUrl;
+	// 	console.log("Initial img src:", demo.src );
+	// 	var reader = new FileReader();
+
+		
+	// 	function upload(e){
+	// 		let carimage = e.target.files || e.dataTransfer.files;
+	// 		demo.src=window.URL.createObjectURL(carimage[0]);
+	// 		console.log("Initial img:", demo.src);
+			
+	// 	}
+
+	function handleFileSelect(event) {
       var file = event.target.files[0];
       var reader = new FileReader();
       
@@ -359,16 +374,24 @@
         var imageDataURL = event.target.result;
         var previewImage = document.getElementById('previewImage');
         previewImage.src = imageDataURL;
-  // console.log("Initial img demo.src:", previewImage.src);
+		// console.log("Initial img demo.src:", previewImage.src);
       };
-   }		 
+      
+      reader.readAsDataURL(file);
+    }
+
+		// reader.onload=function(e){
+		// 	var tempUrl=e.target.result
+		// }
+		// reader.readAsDataURL(file);
+			 
 		//按下傳送按鈕後執行
 		function submitHandler(){
 			var to = "ken4506@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var img = previewImage.src;			
-			// console.log("Initial img demo.src:", demo.src);
+			var img = previewImage.src;	
+			console.log("Initial img demo.src:", previewImage.src);
 			var type = carText.value;	
 			var subject = subText.value;		
 			var email = emailText.value;							
