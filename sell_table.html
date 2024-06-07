@@ -199,28 +199,12 @@
 						
 						<div class="col-lg-6">
                             <label class="form-group">
-								點此上傳照片1
+								點此上傳照片
                                 <input class="form-control" type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)">
 								<img id="previewImage" style="max-width: 300px;">
                             </label>
-                        </div>
+                        </div>						
 						
-						<div class="col-lg-6">
-                            <label class="form-group">
-								點此上傳照片2
-                                <input class="form-control" type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)">
-								<img id="previewImage" style="max-width: 300px;">
-                            </label>
-                        </div>	
-
-						<div class="col-lg-6">
-                            <label class="form-group">
-								點此上傳照片3
-                                <input class="form-control" type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)">
-								<img id="previewImage" style="max-width: 300px;">
-                            </label>
-                        </div>	
-
 						<div class="col-lg-6">
                             <div class="form-group">
 								您如何得知我們
@@ -240,7 +224,7 @@
                     </div>
 
                     <div class="text-center">
-                       <a href="../completed.html" onclick="javascript:window.location.reload()" ><input  onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約" ></a>
+                       <a href="../completed.html" onclick="javascript:window.location.reload()" ><input  onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約" nodemailer ></a>
 					   <a id="mailTo"></a>
                     </div>
                 </form>
@@ -390,7 +374,9 @@
         var imageDataURL = event.target.result;
         var previewImage = document.getElementById('previewImage');
         previewImage.src = imageDataURL;
-		// console.log("Initial img demo.src:", previewImage.src);
+		// console.log("Initial img previewImage.src:", previewImage.src);
+		URL.createObjectURL()
+		
       };
       
       reader.readAsDataURL(file);
@@ -434,6 +420,37 @@
 			bodyText.value=initBody;
 			
 		}
+
+
+
+		const nodemailer = require('nodemailer');
+
+// 建立郵件傳輸器
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'ken4506@gmail.com',
+    pass: 'xffy bqmg awdg qxas' // 使用 Google 應用程式密碼
+  }
+});
+
+// 定義郵件內容
+const mailOptions = {
+  from: 'ken4506@gmail.com',
+  to: 'ken4506@gmail.com',
+  subject: '自動發送的郵件',
+  text: '這是一封自動發送的郵件。'
+  
+};
+
+// 發送郵件
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('郵件已成功發送：' + info.response);
+  }
+});
 	</script>
 
     <!-- 
