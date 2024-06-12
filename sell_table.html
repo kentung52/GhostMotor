@@ -200,7 +200,7 @@
 						<div class="col-lg-6">
                             <label class="form-group">
 								點此上傳照片
-                                <input class="form-control" type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)" >
+                                <input class="form-control" type="file" id="uploadInput" accept=".jpg, .jpeg, .png" multiple onchange="handleFileSelect(event)"  >
 								<img id="previewImage" style="max-width: 300px;" >
                             </label>
                         </div>						
@@ -224,7 +224,7 @@
                     </div>
 
                     <div class="text-center">
-                       <a href="../completed.html"  ><input onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler(); Supabase();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約"  ></a>
+                       <a href="../completed.html"  ><input onclick="alert('記得送出郵件喔我們會儘快跟您聯繫'); submitHandler();"   class="btn btn-main btn-round-full" name="submit" type="button" value="送出預約"  ></a>
 					   <a id="mailTo"></a>
                     </div>
                 </form>
@@ -383,21 +383,21 @@
 			
 	// 	}
 
-	function handleFileSelect(event) {
-      var file = event.target.files[0];
-      var reader = new FileReader();
+	// function handleFileSelect(event) {
+    //   var file = event.target.files[0];
+    //   var reader = new FileReader();
       
-      reader.onload = function(event) {
-        var imageDataURL = event.target.result;
-        var previewImage = document.getElementById('previewImage');
-        previewImage.src = imageDataURL;
-		console.log("Initial img previewImage.src:", previewImage.src);
-		URL.createObjectURL()
+    //   reader.onload = function(event) {
+    //     var imageDataURL = event.target.result;
+    //     var previewImage = document.getElementById('previewImage');
+    //     previewImage.src = imageDataURL;
+	// 	console.log("Initial img previewImage.src:", previewImage.src);
+	// 	URL.createObjectURL()
 		
-      };
+    //   };
       
-      reader.readAsDataURL(file);
-    }
+    //   reader.readAsDataURL(file);
+    // }
 
 		// reader.onload=function(e){
 		// 	var tempUrl=e.target.result
@@ -409,8 +409,9 @@
 			var to = "ken4506@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
 			// var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
 			var title = "車輛寄賣預約";
-			var img = previewImage.src;	
+			// var img = previewImage.src;	
 			console.log("Initial img demo.src:", previewImage.src);
+			var img = uploadInput.value;
 			var type = carText.value;	
 			var subject = subText.value;		
 			var email = emailText.value;							
